@@ -1,19 +1,15 @@
 {
-  "name": "webpack-custom-blocks",
-  "version": "0.0.1",
-  "description": "A set of well-thought 📦webpack-blocks with aim to use in real-world projects",
+  "name": "@futuregroup/webpack-custom-blocks",
+  "version": "0.1.0",
+  "description": "A set of well-thought 📦webpack-blocks for real-world projects",
   "author": "Vlad Zhukov",
   "license": "MIT",
+  "keywords": ["webpack", "webpack2", "webpack-blocks", "webpack-dev-server", "react-hot-loader", "babel", "stylus"],
+  "repository": {
+    "url": "git@github.com:fugr-ru/webpack-custom-blocks.git",
+    "type": "git"
+  },
   "main": "index.js",
-  "keywords": [
-    "webpack",
-    "webpack2",
-    "webpack-blocks",
-    "webpack-dev-server",
-    "react-hot-loader",
-    "babel",
-    "stylus"
-  ],
   "scripts": {
     "lint": "eslint \"src/**/*.js\""
   },

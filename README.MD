@@ -1,4 +1,5 @@
 # webpack-custom-blocks
+A set of well-thought 📦webpack-blocks for real-world projects
 
 ## generic
 ### setEnv
