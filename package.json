@@ -1,0 +1,44 @@
+{
+  "name": "webpack-custom-blocks",
+  "version": "0.0.1",
+  "description": "A set of well-thought 📦webpack-blocks with aim to use in real-world projects",
+  "author": "Vlad Zhukov",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "webpack",
+    "webpack2",
+    "webpack-blocks",
+    "webpack-dev-server",
+    "react-hot-loader",
+    "babel",
+    "stylus"
+  ],
+  "scripts": {
+    "lint": "eslint \"src/**/*.js\""
+  },
+  "peerDependencies": {
+    "@webpack-blocks/webpack2": "~0.4.0",
+    "babel-core": "^6.0.0"
+  },
+  "dependencies": {
+    "babel-loader": "^6.3.2",
+    "css-loader": "^0.26.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "image-webpack-loader": "^3.2.0",
+    "raw-loader": "^0.5.1",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "style-loader": "^0.13.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.5.0",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "devDependencies": {
+    "@webpack-blocks/webpack2": "^0.4.0",
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.17.0",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-import": "^2.2.0"
+  }
+}
