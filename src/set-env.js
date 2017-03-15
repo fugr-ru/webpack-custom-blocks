@@ -6,8 +6,8 @@ const {webpack} = require('@webpack-blocks/webpack2');
  */
 module.exports = (options = {}) => {
     const {
-        nodeEnv = 'development',
-        babelEnv = 'development',
+        nodeEnv,
+        babelEnv,
     } = options;
 
     process.env.NODE_ENV = nodeEnv;
