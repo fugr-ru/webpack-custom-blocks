@@ -1,6 +1,5 @@
 const {getFileType, fileTypePreConfig} = require('./util/util');
 
-
 /**
  * Image loader for HMR.
  */
@@ -13,7 +12,6 @@ module.exports = (options = {}) => {
         fileOptions = {},
     } = options;
 
-
     const imageHotLoader = context => ({
         module: {
             rules: [
@@ -25,16 +23,12 @@ module.exports = (options = {}) => {
                         loader: 'file-loader',
                         options: fileOptions,
                     },
-                }
+                },
             ],
         },
     });
 
-
-    return Object.assign(
-        imageHotLoader,
-        {
-            pre: fileTypePreConfig(test, fileType),
-        }
-    );
+    return Object.assign(imageHotLoader, {
+        pre: fileTypePreConfig(test, fileType),
+    });
 };

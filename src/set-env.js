@@ -1,6 +1,5 @@
 const {webpack} = require('@webpack-blocks/webpack2');
 
-
 /**
  * Sets environment variables with all possible ways.
  */

@@ -1,7 +1,6 @@
 const {webpack} = require('@webpack-blocks/webpack2');
 const pathNode = require('path');
 
-
 /**
  * Webpack dev server with React HMR.
  */
@@ -39,10 +38,7 @@ module.exports = (options = {}) => {
         },
     });
 
-    return Object.assign(
-        reactHotServer,
-        {
-            post: postConfig,
-        }
-    );
+    return Object.assign(reactHotServer, {
+        post: postConfig,
+    });
 };

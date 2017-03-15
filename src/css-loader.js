@@ -1,6 +1,5 @@
 const {getFileType, fileTypePreConfig} = require('./util/util');
 
-
 /**
  * CSS loader.
  */
@@ -15,7 +14,6 @@ module.exports = (options = {}) => {
         cssOptions = {},
     } = options;
 
-
     const cssLoader = (context) => {
         let use = [
             {
@@ -25,13 +23,12 @@ module.exports = (options = {}) => {
             {
                 loader: 'css-loader',
                 options: cssOptions,
-            }
+            },
         ];
 
         if (Array.isArray(loaders)) {
             use = use.concat(loaders);
         }
-
 
         return {
             module: {
@@ -41,17 +38,13 @@ module.exports = (options = {}) => {
                         exclude,
                         include,
                         use,
-                    }
+                    },
                 ],
             },
         };
     };
 
-
-    return Object.assign(
-        cssLoader,
-        {
-            pre: fileTypePreConfig(test, fileType),
-        }
-    );
+    return Object.assign(cssLoader, {
+        pre: fileTypePreConfig(test, fileType),
+    });
 };

@@ -14,7 +14,6 @@ function getFileType(context, test, fileType) {
     return resultTest;
 }
 
-
 /**
  *
  * @param test {*}
@@ -28,7 +27,6 @@ function fileTypePreConfig(test, fileType) {
         }
     };
 }
-
 
 module.exports = {
     getFileType,

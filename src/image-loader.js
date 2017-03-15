@@ -1,6 +1,5 @@
 const {getFileType, fileTypePreConfig} = require('./util/util');
 
-
 /**
  * Image loader with minification for production.
  */
@@ -13,7 +12,6 @@ module.exports = (options = {}) => {
         fileOptions = {},
         imageOptions = {},
     } = options;
-
 
     const imageLoader = context => ({
         module: {
@@ -29,19 +27,20 @@ module.exports = (options = {}) => {
                         },
                         {
                             loader: 'image-webpack-loader',
-                            options: Object.assign({
-                                svgo: {
-                                    plugins: [
-                                        {removeEmptyAttrs: true},
-                                    ],
+                            options: Object.assign(
+                                {
+                                    svgo: {
+                                        plugins: [{removeEmptyAttrs: true}],
+                                    },
+                                    optipng: {
+                                        optimizationLevel: 5,
+                                    },
+                                    mozjpeg: {
+                                        quality: 80,
+                                    },
                                 },
-                                optipng: {
-                                    optimizationLevel: 5,
-                                },
-                                mozjpeg: {
-                                    quality: 80,
-                                },
-                            }, imageOptions),
+                                imageOptions
+                            ),
                         },
                     ],
                 },
@@ -49,11 +48,7 @@ module.exports = (options = {}) => {
         },
     });
 
-
-    return Object.assign(
-        imageLoader,
-        {
-            pre: fileTypePreConfig(test, fileType),
-        }
-    );
+    return Object.assign(imageLoader, {
+        pre: fileTypePreConfig(test, fileType),
+    });
 };

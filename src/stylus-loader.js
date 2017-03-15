@@ -1,6 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-
 /**
  * Stylus loader for production.
  */
@@ -12,7 +11,6 @@ module.exports = (options = {}) => {
         rawOptions = {},
         stylusOptions = {},
     } = options;
-
 
     const stylusLoader = context => ({
         module: {
@@ -28,12 +26,15 @@ module.exports = (options = {}) => {
                         },
                         {
                             loader: 'stylus-loader',
-                            options: Object.assign({
-                                compress: true,
-                            }, stylusOptions),
-                        }
+                            options: Object.assign(
+                                {
+                                    compress: true,
+                                },
+                                stylusOptions
+                            ),
+                        },
                     ]),
-                }
+                },
             ],
         },
     });
@@ -43,17 +44,11 @@ module.exports = (options = {}) => {
     };
 
     const postConfig = () => ({
-        plugins: [
-            new ExtractTextPlugin({filename}),
-        ],
+        plugins: [new ExtractTextPlugin({filename})],
     });
 
-
-    return Object.assign(
-        stylusLoader,
-        {
-            pre: preConfig,
-            post: postConfig,
-        }
-    );
+    return Object.assign(stylusLoader, {
+        pre: preConfig,
+        post: postConfig,
+    });
 };

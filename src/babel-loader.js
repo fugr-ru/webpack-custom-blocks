@@ -1,6 +1,5 @@
 const {getFileType, fileTypePreConfig} = require('./util/util');
 
-
 /**
  * Babel loader.
  */
@@ -13,7 +12,6 @@ module.exports = (options = {}) => {
         babelOptions = {},
     } = options;
 
-
     const babelLoader = context => ({
         module: {
             rules: [
@@ -25,16 +23,12 @@ module.exports = (options = {}) => {
                         loader: 'babel-loader',
                         options: babelOptions,
                     },
-                }
+                },
             ],
         },
     });
 
-
-    return Object.assign(
-        babelLoader,
-        {
-            pre: fileTypePreConfig(test, fileType),
-        }
-    );
+    return Object.assign(babelLoader, {
+        pre: fileTypePreConfig(test, fileType),
+    });
 };

@@ -1,6 +1,5 @@
 const {getFileType, fileTypePreConfig} = require('./util/util');
 
-
 /**
  * Font loader for HMR.
  */
@@ -13,7 +12,6 @@ module.exports = (options = {}) => {
         fileOptions = {},
     } = options;
 
-
     const fontHotLoader = context => ({
         module: {
             rules: [
@@ -25,16 +23,12 @@ module.exports = (options = {}) => {
                         loader: 'file-loader',
                         options: fileOptions,
                     },
-                }
+                },
             ],
         },
     });
 
-
-    return Object.assign(
-        fontHotLoader,
-        {
-            pre: fileTypePreConfig(test, fileType),
-        }
-    );
+    return Object.assign(fontHotLoader, {
+        pre: fileTypePreConfig(test, fileType),
+    });
 };

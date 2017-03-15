@@ -1,6 +1,5 @@
 const cssLoader = require('./css-loader');
 
-
 /**
  * Stylus loader for HMR.
  */
@@ -15,15 +14,16 @@ module.exports = (options = {}) => {
 
     const fileType = 'text/x-stylus';
 
-
     const stylusHotLoader = cssLoader({
         fileType,
         exclude,
         include,
-        loaders: [{
-            loader: 'stylus-loader',
-            options: stylusOptions,
-        }],
+        loaders: [
+            {
+                loader: 'stylus-loader',
+                options: stylusOptions,
+            },
+        ],
         styleOptions,
         cssOptions,
     });
@@ -32,11 +32,7 @@ module.exports = (options = {}) => {
         context.fileType.add(fileType, /\.(styl|stylus)$/);
     };
 
-
-    return Object.assign(
-        stylusHotLoader,
-        {
-            pre: preConfig,
-        }
-    );
+    return Object.assign(stylusHotLoader, {
+        pre: preConfig,
+    });
 };
