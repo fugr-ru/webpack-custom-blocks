@@ -2,10 +2,7 @@ const {getFileType, fileTypePreConfig} = require('./util/util');
 
 
 /**
- * babelLoader
- *
- * @param options {object}
- * @returns {object}
+ * Babel loader.
  */
 module.exports = (options = {}) => {
     const {

@@ -3,12 +3,7 @@ const pathNode = require('path');
 
 
 /**
- *
- * @param options {object}
- * @param options.host {string}
- * @param options.port {number}
- * @param options.path {string}
- * @returns {object}
+ * Webpack dev server with React HMR.
  */
 module.exports = (options = {}) => {
     const {

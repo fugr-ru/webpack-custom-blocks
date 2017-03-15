@@ -2,11 +2,7 @@ const cssLoader = require('./css-loader');
 
 
 /**
- * stylusHotLoader
- *
- * @param options {object}
- * @param options.filename {string}
- * @return {object}
+ * Stylus loader for HMR.
  */
 module.exports = (options = {}) => {
     const {

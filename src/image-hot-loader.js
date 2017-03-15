@@ -2,10 +2,7 @@ const {getFileType, fileTypePreConfig} = require('./util/util');
 
 
 /**
- * imageHotLoader
- *
- * @param options {object}
- * @returns {object}
+ * Image loader for HMR.
  */
 module.exports = (options = {}) => {
     const {

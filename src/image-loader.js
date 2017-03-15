@@ -2,12 +2,7 @@ const {getFileType, fileTypePreConfig} = require('./util/util');
 
 
 /**
- * imageLoader
- *
- * @param options {object}
- * @param options.filename {string}
- * @param options.stylusOptions {object}
- * @return {object}
+ * Image loader with minification for production.
  */
 module.exports = (options = {}) => {
     const {

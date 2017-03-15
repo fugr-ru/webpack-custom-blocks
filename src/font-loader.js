@@ -2,10 +2,7 @@ const {getFileType, fileTypePreConfig} = require('./util/util');
 
 
 /**
- * fontLoader
- *
- * @param options {object}
- * @returns {object}
+ * Font loader for production.
  */
 module.exports = (options = {}) => {
     const {

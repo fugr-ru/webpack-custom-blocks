@@ -2,12 +2,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 /**
- * stylusLoader
- *
- * @param options {object}
- * @param options.filename {string}
- * @param options.stylusOptions {object}
- * @return {object}
+ * Stylus loader for production.
  */
 module.exports = (options = {}) => {
     const {

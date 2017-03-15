@@ -2,10 +2,7 @@ const {getFileType, fileTypePreConfig} = require('./util/util');
 
 
 /**
- * fontHotLoader
- *
- * @param options {object}
- * @returns {object}
+ * Font loader for HMR.
  */
 module.exports = (options = {}) => {
     const {
