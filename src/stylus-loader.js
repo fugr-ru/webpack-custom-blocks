@@ -1,14 +1,17 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const {getFileType, fileTypePreConfig} = require('./util/util');
 
 /**
  * Stylus loader for production.
  */
 module.exports = (options = {}) => {
     const {
-        filename = '[name].css',
+        test = /\.(styl|stylus)$/,
+        fileType = 'text/x-stylus',
         exclude,
         include,
-        rawOptions = {},
+        fileOptions = {},
+        extractOptions = {},
+        cssOptions = {},
         stylusOptions = {},
     } = options;
 
@@ -16,13 +19,21 @@ module.exports = (options = {}) => {
         module: {
             rules: [
                 {
-                    test: context.fileType('text/x-stylus'),
+                    test: getFileType(context, test, fileType),
                     exclude,
                     include,
-                    use: ExtractTextPlugin.extract([
+                    use: [
                         {
-                            loader: 'raw-loader',
-                            options: rawOptions,
+                            loader: 'file-loader',
+                            options: fileOptions,
+                        },
+                        {
+                            loader: 'extract-loader',
+                            options: extractOptions,
+                        },
+                        {
+                            loader: 'css-loader',
+                            options: cssOptions,
                         },
                         {
                             loader: 'stylus-loader',
@@ -33,22 +44,13 @@ module.exports = (options = {}) => {
                                 stylusOptions
                             ),
                         },
-                    ]),
+                    ],
                 },
             ],
         },
     });
 
-    const preConfig = (context) => {
-        context.fileType.add('text/x-stylus', /\.(styl|stylus)$/);
-    };
-
-    const postConfig = () => ({
-        plugins: [new ExtractTextPlugin({filename})],
-    });
-
     return Object.assign(stylusLoader, {
-        pre: preConfig,
-        post: postConfig,
+        pre: fileTypePreConfig(test, fileType),
     });
 };
