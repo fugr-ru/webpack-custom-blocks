@@ -1,6 +1,6 @@
 const {getFileType, fileTypePreConfig} = require('./util/util');
 
-/**
+/*
  * CSS loader.
  */
 module.exports = (options = {}) => {

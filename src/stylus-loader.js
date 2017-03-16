@@ -1,7 +1,7 @@
 const {getFileType, fileTypePreConfig} = require('./util/util');
 
-/**
- * Stylus loader for production.
+/*
+ * Stylus loader.
  */
 module.exports = (options = {}) => {
     const {

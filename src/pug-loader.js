@@ -1,6 +1,6 @@
 const {getFileType, fileTypePreConfig} = require('./util/util');
 
-/**
+/*
  * Pug/Jade loader.
  */
 module.exports = (options = {}) => {

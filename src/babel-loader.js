@@ -1,6 +1,6 @@
 const {getFileType, fileTypePreConfig} = require('./util/util');
 
-/**
+/*
  * Babel loader.
  */
 module.exports = (options = {}) => {

@@ -1,7 +1,7 @@
 const {getFileType, fileTypePreConfig} = require('./util/util');
 
-/**
- * Image loader with minification for production.
+/*
+ * Image loader with minification.
  */
 module.exports = (options = {}) => {
     const {
