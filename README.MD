@@ -1,19 +1,17 @@
 # webpack-custom-blocks
 A set of well-thought 📦webpack-blocks for real-world projects
 
-## generic
 ### setEnv
-#### Options
+Sets environmental variables with all possible ways.
+
 Name | Default | Description
 --- | --- | ---
 `nodeEnv` | `undefined` |
 `babelEnv` | `undefined` |
 
-## basic loaders
 ### babelLoader
 Built on top of [babel-loader](https://github.com/babel/babel-loader).
 
-#### Options
 Name | Default | Description
 --- | --- | ---
 `test` | `undefined` |
@@ -23,9 +21,8 @@ Name | Default | Description
 `babelOptions` | `{}` | `babel-loader` options.
 
 ### cssLoader
-Built on top of style-loader and css-loader.
+Built on top of `style-loader` and `css-loader`.
 
-#### Options
 Name | Default | Description
 --- | --- | ---
 `test` | `undefined` |
@@ -37,22 +34,55 @@ Name | Default | Description
 `cssOptions` | `{}` | `css-loader` options.
 
 ### stylusLoader
-Built on top of [stylus-loader](https://github.com/shama/stylus-loader), extract-text-webpack-plugin@2 and autoprefixer-stylus.
+Built on top of [stylus-loader](https://github.com/shama/stylus-loader) and `extract-loader`.
 
-#### Options]
 Name | Default | Description
 --- | --- | ---
-`filename` | `[name].css` |
+`test` | <code>/\.(styl&#124;stylus)$/</code> |
+`fileType` | `text/x-stylus` |
+`exclude` | `undefined` |
+`include` | `undefined` |
+`fileOptions` | `{}` |
+`extractOptions` | `{}` |
+`cssOptions` | `{}` |
 `stylusOptions` | `{}` |
 
-## hot loaders
-### stylusHotLoader
-#### Options
+### pugLoader
+Build on top of `pug-loader`.
+
+Name | Default | Description
+--- | --- | ---
+`test` | <code>/\.(pug|jade)$/</code> |
+`fileType` | `text/x-pug` |
+`exclude` | `undefined` |
+`include` | `undefined` |
+`fileOptions` | `{}` |
+`pugOptions` | `{}` |
+
+### imageLoader
+Build on top of `image-webpack-loader`.
+
+Name | Default | Description
+--- | --- | ---
+`test` | `undeifned` |
+`fileType` | `image` |
+`exclude` | `undefined` |
+`include` | `undefined` |
+`fileOptions` | `{}` |
+`imageOptions` | `{}` |
+
+### fontLoader
+Name | Default | Description
+--- | --- | ---
+`test` | `undeifned` |
+`fileType` | `application/font` |
+`exclude` | `undefined` |
+`include` | `undefined` |
+`fileOptions` | `{}` |
 
 ### reactHotServer
 Built on top of webpack-dev-server@2 and react-hot-loader@3.
 
-#### Options
 Name | Default | Description
 --- | --- | ---
 `host` | `localhost` |
