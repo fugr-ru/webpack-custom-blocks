@@ -18,7 +18,7 @@ Name | Default | Description
 `fileType` | `application/javascript` | If `test` is also set, then it adds a new fileType, else uses it as an existing one.
 `exclude` | `undefined` |
 `include` | `undefined` |
-`babelOptions` | `{}` | `babel-loader` options.
+`babelOptions` | `undefined` | `babel-loader` options.
 
 ### cssLoader
 Built on top of `style-loader` and `css-loader`.
@@ -30,8 +30,8 @@ Name | Default | Description
 `exclude` | `undefined` |
 `include` | `undefined` |
 `loaders` | `[]` | Additional loaders that go after `css-loader`.
-`styleOptions` | `{}` | `style-loader` options.
-`cssOptions` | `{}` | `css-loader` options.
+`styleOptions` | `undefined` | `style-loader` options.
+`cssOptions` | `undefined` | `css-loader` options.
 
 ### stylusLoader
 Built on top of [stylus-loader](https://github.com/shama/stylus-loader) and `extract-loader`.
@@ -42,13 +42,13 @@ Name | Default | Description
 `fileType` | `text/x-stylus` |
 `exclude` | `undefined` |
 `include` | `undefined` |
-`fileOptions` | `{}` |
-`extractOptions` | `{}` |
-`cssOptions` | `{}` |
-`stylusOptions` | `{}` |
+`fileOptions` | `undefined` |
+`extractOptions` | `undefined` |
+`cssOptions` | `undefined` |
+`stylusOptions` | `undefined` |
 
 ### pugLoader
-Build on top of `pug-loader`.
+Build on top of `pug-html-loader`.
 
 Name | Default | Description
 --- | --- | ---
@@ -56,8 +56,8 @@ Name | Default | Description
 `fileType` | `text/x-pug` |
 `exclude` | `undefined` |
 `include` | `undefined` |
-`fileOptions` | `{}` |
-`pugOptions` | `{}` |
+`fileOptions` | `undefined` |
+`pugOptions` | `undefined` |
 
 ### imageLoader
 Build on top of `image-webpack-loader`.
@@ -68,8 +68,8 @@ Name | Default | Description
 `fileType` | `image` |
 `exclude` | `undefined` |
 `include` | `undefined` |
-`fileOptions` | `{}` |
-`imageOptions` | `{}` |
+`fileOptions` | `undefined` |
+`imageOptions` | `undefined` |
 
 ### fontLoader
 Name | Default | Description
@@ -78,7 +78,7 @@ Name | Default | Description
 `fileType` | `application/font` |
 `exclude` | `undefined` |
 `include` | `undefined` |
-`fileOptions` | `{}` |
+`fileOptions` | `undefined` |
 
 ### reactHotServer
 Built on top of webpack-dev-server@2 and react-hot-loader@3.
