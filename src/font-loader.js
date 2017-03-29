@@ -9,7 +9,7 @@ module.exports = (options = {}) => {
         fileType = 'application/font',
         exclude,
         include,
-        fileOptions = {},
+        fileOptions,
     } = options;
 
     const fontLoader = context => ({

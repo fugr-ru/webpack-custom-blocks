@@ -10,8 +10,8 @@ module.exports = (options = {}) => {
         exclude,
         include,
         loaders = [],
-        styleOptions = {},
-        cssOptions = {},
+        styleOptions,
+        cssOptions,
     } = options;
 
     const cssLoader = (context) => {

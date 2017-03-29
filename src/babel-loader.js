@@ -9,7 +9,7 @@ module.exports = (options = {}) => {
         fileType = 'application/javascript',
         exclude,
         include,
-        babelOptions = {},
+        babelOptions,
     } = options;
 
     const babelLoader = context => ({

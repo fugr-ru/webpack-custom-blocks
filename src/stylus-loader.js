@@ -9,10 +9,10 @@ module.exports = (options = {}) => {
         fileType = 'text/x-stylus',
         exclude,
         include,
-        fileOptions = {},
-        extractOptions = {},
-        cssOptions = {},
-        stylusOptions = {},
+        fileOptions,
+        extractOptions,
+        cssOptions,
+        stylusOptions,
     } = options;
 
     const stylusLoader = context => ({

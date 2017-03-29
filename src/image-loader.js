@@ -9,8 +9,8 @@ module.exports = (options = {}) => {
         fileType = 'image',
         exclude,
         include,
-        fileOptions = {},
-        imageOptions = {},
+        fileOptions,
+        imageOptions,
     } = options;
 
     const imageLoader = context => ({

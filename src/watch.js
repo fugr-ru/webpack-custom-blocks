@@ -4,7 +4,7 @@
 module.exports = (options = {}) => {
     const {
         watch = true,
-        watchOptions = {},
+        watchOptions,
     } = options;
 
     return () => ({
