@@ -1,5 +1,6 @@
 module.exports = {
     setEnv: require('./src/set-env'),
+    watch: require('./src/watch'),
     reactHotServer: require('./src/react-hot-server'),
 
     babelLoader: require('./src/babel-loader'),
