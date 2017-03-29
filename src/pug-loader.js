@@ -10,7 +10,6 @@ module.exports = (options = {}) => {
         exclude,
         include,
         fileOptions,
-        extractOptions,
         pugOptions,
     } = options;
 
@@ -27,11 +26,7 @@ module.exports = (options = {}) => {
                             options: fileOptions,
                         },
                         {
-                            loader: 'extract-loader',
-                            options: extractOptions,
-                        },
-                        {
-                            loader: 'pug-loader',
+                            loader: 'pug-html-loader',
                             options: pugOptions,
                         },
                     ],
