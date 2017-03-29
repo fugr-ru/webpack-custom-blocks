@@ -1,27 +1,18 @@
 const {webpack} = require('@webpack-blocks/webpack2');
 
 /*
- * Sets environment variables with all possible ways.
+ * Sets environment variables.
  */
-module.exports = (options = {}) => {
-    const {
-        nodeEnv,
-        babelEnv,
-    } = options;
+module.exports = (options = {}) =>
+    () => {
+        const keys = Object.keys(options);
 
-    process.env.NODE_ENV = nodeEnv;
-    process.env.BABEL_ENV = babelEnv;
+        // eslint-disable-next-line array-callback-return
+        keys.map((name) => {
+            process.env[name] = options[name];
+        });
 
-    return () => ({
-        plugins: [
-            new webpack.DefinePlugin({
-                'process.env': {
-                    NODE_ENV: JSON.stringify(nodeEnv),
-                    BABEL_ENV: JSON.stringify(babelEnv),
-                },
-            }),
-
-            new webpack.EnvironmentPlugin(['NODE_ENV', 'BABEL_ENV']),
-        ],
-    });
-};
+        return {
+            plugins: [new webpack.EnvironmentPlugin(keys)],
+        };
+    };
