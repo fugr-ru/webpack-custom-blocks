@@ -6,7 +6,6 @@ Sets environmental variables to `process.env` and [EnvironmentPlugin](https://we
 
 ```js
 // Example:
-
 setEnv({
     NODE_ENV: 'development',
     HOT: true,
@@ -95,4 +94,4 @@ Name | Default | Description
 --- | --- | ---
 `host` | `localhost` |
 `port` | `3000` |
-`path` | `static/` | The final output.publicPath will be `http://${host}:${port}/${path}`.
+`path` | `''` | The final `output.publicPath` will be `http://${host}:${port}/${path}`.
