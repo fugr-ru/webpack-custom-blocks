@@ -1,15 +1,23 @@
 # webpack-custom-blocks
 A set of well-thought 📦webpack-blocks for real-world projects
 
-### setEnv
-Sets environmental variables with all possible ways.
+### setEnv({options})
+Sets environmental variables to `process.env` and [EnvironmentPlugin](https://webpack.js.org/plugins/environment-plugin/).
 
-Name | Default | Description
---- | --- | ---
-`nodeEnv` | `undefined` |
-`babelEnv` | `undefined` |
+```js
+// Example:
 
-### babelLoader
+setEnv({
+    NODE_ENV: 'development',
+    HOT: true,
+    // Any other variables.
+})
+```
+
+### watch({options})
+Watch mode. See webpack [watchOptions](https://webpack.js.org/configuration/watch/#watchoptions) for available options.
+
+### babelLoader({options})
 Built on top of [babel-loader](https://github.com/babel/babel-loader).
 
 Name | Default | Description
@@ -20,7 +28,7 @@ Name | Default | Description
 `include` | `undefined` |
 `babelOptions` | `undefined` | `babel-loader` options.
 
-### cssLoader
+### cssLoader({options})
 Built on top of `style-loader` and `css-loader`.
 
 Name | Default | Description
@@ -33,7 +41,7 @@ Name | Default | Description
 `styleOptions` | `undefined` | `style-loader` options.
 `cssOptions` | `undefined` | `css-loader` options.
 
-### stylusLoader
+### stylusLoader({options})
 Built on top of [stylus-loader](https://github.com/shama/stylus-loader) and `extract-loader`.
 
 Name | Default | Description
@@ -47,7 +55,7 @@ Name | Default | Description
 `cssOptions` | `undefined` |
 `stylusOptions` | `undefined` |
 
-### pugLoader
+### pugLoader({options})
 Build on top of `pug-html-loader`.
 
 Name | Default | Description
@@ -59,7 +67,7 @@ Name | Default | Description
 `fileOptions` | `undefined` |
 `pugOptions` | `undefined` |
 
-### imageLoader
+### imageLoader({options})
 Build on top of `image-webpack-loader`.
 
 Name | Default | Description
@@ -71,7 +79,7 @@ Name | Default | Description
 `fileOptions` | `undefined` |
 `imageOptions` | `undefined` |
 
-### fontLoader
+### fontLoader({options})
 Name | Default | Description
 --- | --- | ---
 `test` | `undeifned` |
@@ -80,7 +88,7 @@ Name | Default | Description
 `include` | `undefined` |
 `fileOptions` | `undefined` |
 
-### reactHotServer
+### reactHotServer({options})
 Built on top of webpack-dev-server@2 and react-hot-loader@3.
 
 Name | Default | Description
