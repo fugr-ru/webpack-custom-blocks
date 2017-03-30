@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "babel-loader": "^6.4.0",
-    "css-loader": "^0.27.3",
+    "css-loader": "^0.28.0",
     "extract-loader": "^0.1.0",
     "file-loader": "^0.10.1",
     "image-webpack-loader": "^3.3.0",
