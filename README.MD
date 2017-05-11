@@ -1,11 +1,29 @@
-# webpack-custom-blocks
-A set of well-thought 📦webpack-blocks for real-world projects
+webpack-custom-blocks · [![npm](https://img.shields.io/npm/v/@futuregroup/webpack-custom-blocks.svg)](https://www.npmjs.com/package/@futuregroup/webpack-custom-blocks)
+=====================
 
-### setEnv({options})
+A set of well-thought 📦[webpack-blocks](https://github.com/andywer/webpack-blocks) for real-world projects.
+
+## API
+- [`setEnv([options])`](#setenvoptions)
+- [`watch([options])`](#watchoptions)
+- [`reactHotServer([options])`](#reacthotserveroptions)
+- [`babelLoader([options])`](#babelloaderoptions)
+- [`cssLoader([options])`](#cssloaderoptions)
+- [`stylusLoader([options])`](#stylusloaderoptions)
+- [`pugLoader([options])`](#pugloaderoptions)
+- [`imageLoader([options])`](#imageloaderoptions)
+- [`fontLoader([options])`](#fontloaderoptions)
+
+---
+
+### `setEnv([options])`
 Sets environmental variables to `process.env` and [EnvironmentPlugin](https://webpack.js.org/plugins/environment-plugin/).
 
+__Arguments:__
+- `[options]` _(Object)_: Any enumerable properties.
+
+__Example:__
 ```js
-// Example:
 setEnv({
     NODE_ENV: 'development',
     HOT: true,
@@ -13,85 +31,107 @@ setEnv({
 })
 ```
 
-### watch({options})
-Watch mode. See webpack [watchOptions](https://webpack.js.org/configuration/watch/#watchoptions) for available options.
+---
 
-### babelLoader({options})
+### `watch([options])`
+Watch mode. 
+
+__Arguments:__
+- `[options]` _(Object)_: See [watchOptions](https://webpack.js.org/configuration/watch/#watchoptions) for available properties.
+
+---
+
+### `reactHotServer([options])`
+Built on top of [`webpack-dev-server`](https://webpack.js.org/configuration/dev-server/) and [`react-hot-loader@3`](https://github.com/gaearon/react-hot-loader).
+
+__Arguments:__
+- `[options]` _(Object)_: Available properties:
+  - `[host]` _(String)_: Defaults to `localhost`.
+  - `[port]` _(Number|String)_: Defaults to `3000`.
+  - `[path]` _(String|Number)_: Defaults to `''`. The final `output.publicPath` will be `http://${host}:${port}/${path}`.
+
+---
+
+### `babelLoader([options])`
 Built on top of [babel-loader](https://github.com/babel/babel-loader).
 
-Name | Default | Description
---- | --- | ---
-`test` | `undefined` |
-`fileType` | `application/javascript` | If `test` is also set, then it adds a new fileType, else uses it as an existing one.
-`exclude` | `undefined` |
-`include` | `undefined` |
-`babelOptions` | `undefined` | `babel-loader` options.
+__Arguments:__
+- `[options]` _(Object)_: Available properties:
+  - `[test]` _(*)_
+  - `[fileType]` _(*)_: Defaults to `application/javascript`. If `test` is also set, then it adds a new fileType, else uses it as an existing one.
+  - `[exclude]` _(*)_
+  - `[include]` _(*)_
+  - `[babelOptions]` _(Object)_: `babel-loader` options.
 
-### cssLoader({options})
+---
+
+### `cssLoader([options])`
 Built on top of `style-loader` and `css-loader`.
 
-Name | Default | Description
---- | --- | ---
-`test` | `undefined` |
-`fileType` | `text/css` | If `test` is also set, then it adds a new fileType, else uses it as an existing one.
-`exclude` | `undefined` |
-`include` | `undefined` |
-`loaders` | `[]` | Additional loaders that go after `css-loader`.
-`styleOptions` | `undefined` | `style-loader` options.
-`cssOptions` | `undefined` | `css-loader` options.
+__Arguments:__
+- `[options]` _(Object)_: Available properties:
+  - `[test]` _(*)_
+  - `[fileType]` _(*)_: Defaults to `text/css`. If `test` is also set, then it adds a new fileType, else uses it as an existing one.
+  - `[exclude]` _(*)_
+  - `[include]` _(*)_
+  - `[loaders]` _(Array)_: Defaults to `[]`. Additional loaders that go after `css-loader`.
+  - `[styleOptions]` _(Object)_: `style-loader` options.
+  - `[cssOptions]` _(Object)_: `css-loader` options.
 
-### stylusLoader({options})
+---
+
+### `stylusLoader([options])`
 Built on top of [stylus-loader](https://github.com/shama/stylus-loader) and `extract-loader`.
 
-Name | Default | Description
---- | --- | ---
-`test` | <code>/\.(styl&#124;stylus)$/</code> |
-`fileType` | `text/x-stylus` |
-`exclude` | `undefined` |
-`include` | `undefined` |
-`fileOptions` | `undefined` |
-`extractOptions` | `undefined` |
-`cssOptions` | `undefined` |
-`stylusOptions` | `undefined` |
+__Arguments:__
+- `[options]` _(Object)_: Available properties:
+  - `[test]` _(*)_: Defaults to `/\.(styl|stylus)$/`.
+  - `[fileType]` _(*)_: Defaults to `text/x-stylus`.
+  - `[exclude]` _(*)_
+  - `[include]` _(*)_
+  - `[fileOptions]` _(Object)_
+  - `[extractOptions]` _(Object)_
+  - `[cssOptions]` _(Object)_
+  - `[stylusOptions]` _(Object)_
 
-### pugLoader({options})
+---
+
+### `pugLoader([options])`
 Build on top of `pug-html-loader`.
 
-Name | Default | Description
---- | --- | ---
-`test` | <code>/\.(pug|jade)$/</code> |
-`fileType` | `text/x-pug` |
-`exclude` | `undefined` |
-`include` | `undefined` |
-`fileOptions` | `undefined` |
-`pugOptions` | `undefined` |
+__Arguments:__
+- `[options]` _(Object)_: Available properties:
+  - `[test]` _(*)_: Defaults to `/\.(pug|jade)$/`.
+  - `[fileType]` _(*)_: Defaults to `text/x-pug`.
+  - `[exclude]` _(*)_
+  - `[include]` _(*)_
+  - `[fileOptions]` _(Object)_
+  - `[pugOptions]` _(Object)_
 
-### imageLoader({options})
+---
+
+### `imageLoader([options])`
 Build on top of `image-webpack-loader`.
 
-Name | Default | Description
---- | --- | ---
-`test` | `undeifned` |
-`fileType` | `image` |
-`exclude` | `undefined` |
-`include` | `undefined` |
-`fileOptions` | `undefined` |
-`imageOptions` | `undefined` |
+__Arguments:__
+- `[options]` _(Object)_: Available properties:
+  - `[test]` _(*)_
+  - `[fileType]` _(*)_: Defaults to `image`.
+  - `[exclude]` _(*)_
+  - `[include]` _(*)_
+  - `[fileOptions]` _(Object)_
+  - `[imageOptions]` _(Object)_
 
-### fontLoader({options})
-Name | Default | Description
---- | --- | ---
-`test` | `undeifned` |
-`fileType` | `application/font` |
-`exclude` | `undefined` |
-`include` | `undefined` |
-`fileOptions` | `undefined` |
+---
 
-### reactHotServer({options})
-Built on top of webpack-dev-server@2 and react-hot-loader@3.
+### `fontLoader([options])`
 
-Name | Default | Description
---- | --- | ---
-`host` | `localhost` |
-`port` | `3000` |
-`path` | `''` | The final `output.publicPath` will be `http://${host}:${port}/${path}`.
+__Arguments:__
+- `[options]` _(Object)_: Available properties:
+  - `[test]` _(*)_
+  - `[fileType]` _(*)_: Defaults to `application/font`.
+  - `[exclude]` _(*)_
+  - `[include]` _(*)_
+  - `[fileOptions]` _(Object)_
+
+---
