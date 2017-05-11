@@ -1,18 +1,10 @@
-const {getFileType, fileTypePreConfig} = require('./util/util');
+const {getFileType, fileTypePreConfig} = require('./util');
 
 /*
  * CSS loader.
  */
 module.exports = (options = {}) => {
-    const {
-        test,
-        fileType = 'text/css',
-        exclude,
-        include,
-        loaders = [],
-        styleOptions,
-        cssOptions,
-    } = options;
+    const {test, fileType = 'text/css', exclude, include, loaders = [], styleOptions, cssOptions} = options;
 
     const cssLoader = (context) => {
         let use = [

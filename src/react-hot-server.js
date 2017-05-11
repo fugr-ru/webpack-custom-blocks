@@ -5,11 +5,7 @@ const pathNode = require('path');
  * Webpack dev server with React HMR.
  */
 module.exports = (options = {}) => {
-    const {
-        host = 'localhost',
-        port = 3000,
-        path = '',
-    } = options;
+    const {host = 'localhost', port = 3000, path = ''} = options;
 
     const reactHotServer = () => ({
         entry: [

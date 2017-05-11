@@ -1,4 +1,4 @@
-const {getFileType, fileTypePreConfig} = require('./util/util');
+const {getFileType, fileTypePreConfig} = require('./util');
 
 /*
  * Stylus loader.

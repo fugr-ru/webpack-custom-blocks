@@ -1,17 +1,10 @@
-const {getFileType, fileTypePreConfig} = require('./util/util');
+const {getFileType, fileTypePreConfig} = require('./util');
 
 /*
  * Image loader with minification.
  */
 module.exports = (options = {}) => {
-    const {
-        test,
-        fileType = 'image',
-        exclude,
-        include,
-        fileOptions,
-        imageOptions,
-    } = options;
+    const {test, fileType = 'image', exclude, include, fileOptions, imageOptions} = options;
 
     const imageLoader = context => ({
         module: {

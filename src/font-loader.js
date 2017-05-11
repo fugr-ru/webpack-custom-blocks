@@ -1,16 +1,10 @@
-const {getFileType, fileTypePreConfig} = require('./util/util');
+const {getFileType, fileTypePreConfig} = require('./util');
 
 /*
  * Font loader.
  */
 module.exports = (options = {}) => {
-    const {
-        test,
-        fileType = 'application/font',
-        exclude,
-        include,
-        fileOptions,
-    } = options;
+    const {test, fileType = 'application/font', exclude, include, fileOptions} = options;
 
     const fontLoader = context => ({
         module: {

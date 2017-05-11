@@ -15,7 +15,8 @@
   },
   "peerDependencies": {
     "@webpack-blocks/webpack2": "~0.4.0",
-    "babel-core": "^6.0.0"
+    "babel-core": "^6.0.0",
+    "react-hot-loader": "^3.0.0-beta"
   },
   "dependencies": {
     "babel-loader": "^7.0.0",
@@ -25,7 +26,6 @@
     "image-webpack-loader": "^3.3.1",
     "pug": "^2.0.0-rc.1",
     "pug-html-loader": "^1.1.4",
-    "react-hot-loader": "3.0.0-beta.7",
     "style-loader": "^0.17.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",

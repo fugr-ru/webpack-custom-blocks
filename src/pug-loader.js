@@ -1,17 +1,10 @@
-const {getFileType, fileTypePreConfig} = require('./util/util');
+const {getFileType, fileTypePreConfig} = require('./util');
 
 /*
  * Pug/Jade loader.
  */
 module.exports = (options = {}) => {
-    const {
-        test = /\.(pug|jade)$/,
-        fileType = 'text/x-pug',
-        exclude,
-        include,
-        fileOptions,
-        pugOptions,
-    } = options;
+    const {test = /\.(pug|jade)$/, fileType = 'text/x-pug', exclude, include, fileOptions, pugOptions} = options;
 
     const pugLoader = context => ({
         module: {
