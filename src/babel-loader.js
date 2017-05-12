@@ -1,9 +1,9 @@
-const {getFileType, fileTypePreConfig} = require('./util');
+import {getFileType, fileTypePreConfig} from './util';
 
 /*
  * Babel loader.
  */
-module.exports = (options = {}) => {
+export default (options = {}) => {
     const {test, fileType = 'application/javascript', exclude, include, babelOptions} = options;
 
     const babelLoader = context => ({

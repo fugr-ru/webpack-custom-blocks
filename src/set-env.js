@@ -1,9 +1,9 @@
-const {webpack} = require('@webpack-blocks/webpack2');
+import {webpack} from '@webpack-blocks/webpack2';
 
 /*
  * Sets environment variables.
  */
-module.exports = (options = {}) => () => {
+export default (options = {}) => {
     const keys = Object.keys(options);
 
     keys.forEach((name) => {

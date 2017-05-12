@@ -1,9 +1,9 @@
-const {getFileType, fileTypePreConfig} = require('./util');
+import {getFileType, fileTypePreConfig} from './util';
 
 /*
  * Stylus loader.
  */
-module.exports = (options = {}) => {
+export default (options = {}) => {
     const {
         test = /\.(styl|stylus)$/,
         fileType = 'text/x-stylus',

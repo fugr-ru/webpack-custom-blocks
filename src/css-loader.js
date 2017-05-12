@@ -1,9 +1,9 @@
-const {getFileType, fileTypePreConfig} = require('./util');
+import {getFileType, fileTypePreConfig} from './util';
 
 /*
  * CSS loader.
  */
-module.exports = (options = {}) => {
+export default (options = {}) => {
     const {test, fileType = 'text/css', exclude, include, loaders = [], styleOptions, cssOptions} = options;
 
     const cssLoader = (context) => {

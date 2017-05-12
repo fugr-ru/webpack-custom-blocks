@@ -1,9 +1,9 @@
-const {getFileType, fileTypePreConfig} = require('./util');
+import {getFileType, fileTypePreConfig} from './util';
 
 /*
  * Font loader.
  */
-module.exports = (options = {}) => {
+export default (options = {}) => {
     const {test, fileType = 'application/font', exclude, include, fileOptions} = options;
 
     const fontLoader = context => ({

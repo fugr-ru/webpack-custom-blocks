@@ -1,10 +1,10 @@
-const {webpack} = require('@webpack-blocks/webpack2');
-const path = require('path');
+import {webpack} from '@webpack-blocks/webpack2';
+import path from 'path';
 
 /*
  * Webpack dev server with React HMR.
  */
-module.exports = (options = {}) => {
+export default (options = {}) => {
     const {host = 'localhost', port = 8080, publicPath = '/', ...rest} = options;
 
     /* eslint-disable no-underscore-dangle */

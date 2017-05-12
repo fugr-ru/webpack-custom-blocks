@@ -1,7 +1,7 @@
 /*
  * Webpack file watch.
  */
-module.exports = options => () => ({
+export default options => () => ({
     watch: true,
     watchOptions: options,
 });
