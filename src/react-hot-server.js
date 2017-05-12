@@ -5,7 +5,7 @@ import path from 'path';
  * Webpack dev server with React HMR.
  */
 export default (options = {}) => {
-    const {host = 'localhost', port = 8080, publicPath = '/', names, ...rest} = options;
+    const {host = 'localhost', port = 8080, publicPath = '/', names = [], ...rest} = options;
 
     if (!Array.isArray(names)) {
         throw new TypeError('webpack-custom-blocks/reactHotServer: "names" must be an array of strings');
@@ -13,7 +13,7 @@ export default (options = {}) => {
 
     /* eslint-disable no-underscore-dangle */
     const _url = `http://${host}:${port}`;
-    const _path = path.resolve(__dirname, publicPath);
+    const _path = path.resolve(__dirname, `.${publicPath}`);
     const _publicPath = `${_url}${publicPath}`;
     /* eslint-enable no-underscore-dangle */
 
