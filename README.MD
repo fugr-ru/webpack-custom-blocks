@@ -49,6 +49,7 @@ __Arguments:__
   - `[host]` _(String)_: Defaults to `localhost`.
   - `[port]` _(Number|String)_: Defaults to `8080`.
   - `[publicPath]` _(String|Number)_: Defaults to `'/'`. The final `output.publicPath` will be `http://${host}:${port}${path}`.
+  - `[names]` _(Array)_: If entry is an object, only chunks with these names will be extended with `react-hot-loader`.
   - `...rest` _(*)_: Any valid [`devServer`](https://webpack.js.org/configuration/dev-server/) properties.
 
 ---

@@ -5,7 +5,11 @@ import path from 'path';
  * Webpack dev server with React HMR.
  */
 export default (options = {}) => {
-    const {host = 'localhost', port = 8080, publicPath = '/', ...rest} = options;
+    const {host = 'localhost', port = 8080, publicPath = '/', names, ...rest} = options;
+
+    if (!Array.isArray(names)) {
+        throw new TypeError('webpack-custom-blocks/reactHotServer: "names" must be an array of strings');
+    }
 
     /* eslint-disable no-underscore-dangle */
     const _url = `http://${host}:${port}`;
@@ -43,20 +47,14 @@ export default (options = {}) => {
             'webpack/hot/only-dev-server',
         ];
 
-        const presentEntry = config.entry || '';
-
-        let entry = {};
-
-        if (typeof presentEntry === 'string' || Array.isArray(presentEntry)) {
-            entry = devServerEntry.concat(presentEntry);
+        if (typeof config.entry === 'string' || Array.isArray(config.entry)) {
+            config.entry = devServerEntry.concat(config.entry);
         }
         else {
-            Object.keys(presentEntry).forEach((chunkName) => {
-                entry[chunkName] = devServerEntry.concat(presentEntry[chunkName]);
+            names.forEach((chunkName) => {
+                config.entry[chunkName] = devServerEntry.concat(config.entry[chunkName]);
             });
         }
-
-        return {entry};
     }
 
     return Object.assign(reactHotServer, {
