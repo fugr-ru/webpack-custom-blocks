@@ -14,7 +14,8 @@
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint src/**/*.js",
-    "prettier": "prettier-eslint --write **/*.js"
+    "prettier": "prettier-eslint --write **/*.js",
+    "prepublish": "yarn run build"
   },
   "peerDependencies": {
     "@webpack-blocks/webpack2": "~0.4.0",
