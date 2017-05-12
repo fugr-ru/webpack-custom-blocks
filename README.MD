@@ -47,8 +47,9 @@ Built on top of [`webpack-dev-server`](https://webpack.js.org/configuration/dev-
 __Arguments:__
 - `[options]` _(Object)_: Available properties:
   - `[host]` _(String)_: Defaults to `localhost`.
-  - `[port]` _(Number|String)_: Defaults to `3000`.
-  - `[path]` _(String|Number)_: Defaults to `''`. The final `output.publicPath` will be `http://${host}:${port}/${path}`.
+  - `[port]` _(Number|String)_: Defaults to `8080`.
+  - `[publicPath]` _(String|Number)_: Defaults to `'/'`. The final `output.publicPath` will be `http://${host}:${port}${path}`.
+  - `...rest` _(*)_: Any valid [`devServer`](https://webpack.js.org/configuration/dev-server/) properties.
 
 ---
 
