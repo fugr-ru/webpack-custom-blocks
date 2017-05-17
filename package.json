@@ -8,9 +8,9 @@
   "bugs": {
     "url": "https://github.com/fugr-ru/webpack-custom-blocks/issues"
   },
-  "main": "./cjs/index.js",
-  "module": "./es/index.js",
-  "jsnext:main": "./es/index.js",
+  "main": "./dist/webpack-custom-blocks.cjs.js",
+  "module": "./dist/webpack-custom-blocks.esm.js",
+  "jsnext:main": "./dist/webpack-custom-blocks.esm.js",
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint **/*.js",
@@ -62,7 +62,6 @@
   ],
   "files": [
     "src",
-    "cjs",
-    "es"
+    "dist"
   ]
 }
