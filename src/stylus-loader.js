@@ -7,21 +7,19 @@ export default (options = {}) => {
     const {
         test = /\.(styl|stylus)$/,
         fileType = 'text/x-stylus',
-        exclude,
-        include,
         fileOptions,
         extractOptions,
         cssOptions,
         stylusOptions,
+        ...rest,
     } = options;
 
     const stylusLoader = context => ({
         module: {
             rules: [
                 {
+                    ...rest,
                     test: getFileType(context, test, fileType),
-                    exclude,
-                    include,
                     use: [
                         {
                             loader: 'file-loader',

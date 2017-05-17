@@ -4,15 +4,14 @@ import {getFileType, fileTypePreConfig} from './util';
  * Image loader with minification.
  */
 export default (options = {}) => {
-    const {test, fileType = 'image', exclude, include, fileOptions, imageOptions} = options;
+    const {test, fileType = 'image', fileOptions, imageOptions, ...rest} = options;
 
     const imageLoader = context => ({
         module: {
             rules: [
                 {
+                    ...rest,
                     test: getFileType(context, test, fileType),
-                    exclude,
-                    include,
                     use: [
                         {
                             loader: 'file-loader',

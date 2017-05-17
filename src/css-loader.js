@@ -4,7 +4,7 @@ import {getFileType, fileTypePreConfig} from './util';
  * CSS loader.
  */
 export default (options = {}) => {
-    const {test, fileType = 'text/css', exclude, include, loaders = [], styleOptions, cssOptions} = options;
+    const {test, fileType = 'text/css', loaders = [], styleOptions, cssOptions, ...rest} = options;
 
     const cssLoader = (context) => {
         let use = [
@@ -26,9 +26,8 @@ export default (options = {}) => {
             module: {
                 rules: [
                     {
+                        ...rest,
                         test: getFileType(context, test, fileType),
-                        exclude,
-                        include,
                         use,
                     },
                 ],

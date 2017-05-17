@@ -4,7 +4,7 @@ const babel = require('rollup-plugin-babel');
 const pkg = require('./package.json');
 
 export default {
-    entry: './src/index.js',
+    entry: './src/webpack-custom-blocks.js',
 
     plugins: [babel()],
 

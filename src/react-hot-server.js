@@ -32,7 +32,6 @@ export default (options = {}) => {
         devServer: {
             host,
             port,
-            contentBase: _path,
             publicPath: _publicPath,
             historyApiFallback: true,
             hot: true,

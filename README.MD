@@ -50,7 +50,7 @@ __Arguments:__
   - `[port]` _(Number|String)_: Defaults to `8080`.
   - `[publicPath]` _(String|Number)_: Defaults to `'/'`. The final `output.publicPath` will be `http://${host}:${port}${path}`.
   - `[names]` _(Array)_: Defaults to `[]`. If entry is an object, only chunks with these names will be extended with `react-hot-loader`.
-  - `...rest` _(*)_: Any valid [`devServer`](https://webpack.js.org/configuration/dev-server/) properties.
+  - `[...rest]` _(*)_: Any valid [`devServer`](https://webpack.js.org/configuration/dev-server/) properties.
 
 ---
 
@@ -61,9 +61,8 @@ __Arguments:__
 - `[options]` _(Object)_: Available properties:
   - `[test]` _(*)_
   - `[fileType]` _(*)_: Defaults to `application/javascript`. If `test` is also set, then it adds a new fileType, else uses it as an existing one.
-  - `[exclude]` _(*)_
-  - `[include]` _(*)_
   - `[babelOptions]` _(Object)_: `babel-loader` options.
+  - `[...rest]` _(*)_
 
 ---
 
@@ -74,11 +73,10 @@ __Arguments:__
 - `[options]` _(Object)_: Available properties:
   - `[test]` _(*)_
   - `[fileType]` _(*)_: Defaults to `text/css`. If `test` is also set, then it adds a new fileType, else uses it as an existing one.
-  - `[exclude]` _(*)_
-  - `[include]` _(*)_
   - `[loaders]` _(Array)_: Defaults to `[]`. Additional loaders that go after `css-loader`.
   - `[styleOptions]` _(Object)_: `style-loader` options.
   - `[cssOptions]` _(Object)_: `css-loader` options.
+  - `[...rest]` _(*)_
 
 ---
 
@@ -89,12 +87,11 @@ __Arguments:__
 - `[options]` _(Object)_: Available properties:
   - `[test]` _(*)_: Defaults to `/\.(styl|stylus)$/`.
   - `[fileType]` _(*)_: Defaults to `text/x-stylus`.
-  - `[exclude]` _(*)_
-  - `[include]` _(*)_
   - `[fileOptions]` _(Object)_
   - `[extractOptions]` _(Object)_
   - `[cssOptions]` _(Object)_
   - `[stylusOptions]` _(Object)_
+  - `[...rest]` _(*)_
 
 ---
 
@@ -105,10 +102,9 @@ __Arguments:__
 - `[options]` _(Object)_: Available properties:
   - `[test]` _(*)_: Defaults to `/\.(pug|jade)$/`.
   - `[fileType]` _(*)_: Defaults to `text/x-pug`.
-  - `[exclude]` _(*)_
-  - `[include]` _(*)_
   - `[fileOptions]` _(Object)_
   - `[pugOptions]` _(Object)_
+  - `[...rest]` _(*)_
 
 ---
 
@@ -119,10 +115,9 @@ __Arguments:__
 - `[options]` _(Object)_: Available properties:
   - `[test]` _(*)_
   - `[fileType]` _(*)_: Defaults to `image`.
-  - `[exclude]` _(*)_
-  - `[include]` _(*)_
   - `[fileOptions]` _(Object)_
   - `[imageOptions]` _(Object)_
+  - `[...rest]` _(*)_
 
 ---
 
@@ -132,8 +127,7 @@ __Arguments:__
 - `[options]` _(Object)_: Available properties:
   - `[test]` _(*)_
   - `[fileType]` _(*)_: Defaults to `application/font`.
-  - `[exclude]` _(*)_
-  - `[include]` _(*)_
   - `[fileOptions]` _(Object)_
+  - `[...rest]` _(*)_:  options.
 
 ---
