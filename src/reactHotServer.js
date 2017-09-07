@@ -5,7 +5,9 @@ import path from 'path';
  * Webpack dev server with React HMR.
  */
 export default (options = {}) => {
-    const {host = 'localhost', port = 8080, publicPath = '/', names = [], ...rest} = options;
+    const {
+        host = 'localhost', port = 8080, publicPath = '/', names = [], ...rest
+    } = options;
 
     if (!Array.isArray(names)) {
         throw new TypeError('webpack-custom-blocks/reactHotServer: "names" must be an array of strings');
@@ -47,10 +49,12 @@ export default (options = {}) => {
         ];
 
         if (typeof config.entry === 'string' || Array.isArray(config.entry)) {
+            // eslint-disable-next-line no-param-reassign
             config.entry = devServerEntry.concat(config.entry);
         }
         else {
             names.forEach((chunkName) => {
+                // eslint-disable-next-line no-param-reassign
                 config.entry[chunkName] = devServerEntry.concat(config.entry[chunkName]);
             });
         }

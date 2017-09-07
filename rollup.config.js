@@ -1,25 +1,19 @@
-process.env.NODE_ENV = 'development';
-
-const babel = require('rollup-plugin-babel');
-const pkg = require('./package.json');
+import babel from 'rollup-plugin-babel';
+import pkg from './package.json';
 
 export default {
-    entry: './src/webpack-custom-blocks.js',
-
+    input: './src/index.js',
     plugins: [babel()],
-
-    targets: [
+    external: ['path', '@webpack-blocks/webpack2'],
+    sourcemap: true,
+    output: [
         {
-            dest: pkg.main,
+            file: pkg.main,
             format: 'cjs',
-            sourceMap: true,
         },
         {
-            dest: pkg.module,
+            file: pkg.module,
             format: 'es',
-            sourceMap: true,
         },
     ],
-
-    external: ['path', '@webpack-blocks/webpack2'],
 };

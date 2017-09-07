@@ -4,7 +4,9 @@ import {getFileType, fileTypePreConfig} from './util';
  * CSS loader.
  */
 export default (options = {}) => {
-    const {test, fileType = 'text/css', loaders = [], styleOptions, cssOptions, ...rest} = options;
+    const {
+        test, fileType = 'text/css', loaders = [], styleOptions, cssOptions, ...rest
+    } = options;
 
     const cssLoader = (context) => {
         let use = [

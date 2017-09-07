@@ -1,27 +1,29 @@
 import {getFileType, fileTypePreConfig} from './util';
 
 /*
- * Font loader.
+ * Babel loader.
  */
 export default (options = {}) => {
-    const {test, fileType = 'application/font', fileOptions, ...rest} = options;
+    const {
+        test, fileType = 'application/javascript', babelOptions, ...rest
+    } = options;
 
-    const fontLoader = context => ({
+    const babelLoader = context => ({
         module: {
             rules: [
                 {
                     ...rest,
                     test: getFileType(context, test, fileType),
                     use: {
-                        loader: 'file-loader',
-                        options: fileOptions,
+                        loader: 'babel-loader',
+                        options: babelOptions,
                     },
                 },
             ],
         },
     });
 
-    return Object.assign(fontLoader, {
+    return Object.assign(babelLoader, {
         pre: fileTypePreConfig(test, fileType),
     });
 };

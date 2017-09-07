@@ -11,7 +11,7 @@ export default (options = {}) => {
         extractOptions,
         cssOptions,
         stylusOptions,
-        ...rest,
+        ...rest
     } = options;
 
     const stylusLoader = context => ({

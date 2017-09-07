@@ -4,7 +4,9 @@ import {getFileType, fileTypePreConfig} from './util';
  * Pug/Jade loader.
  */
 export default (options = {}) => {
-    const {test = /\.(pug|jade)$/, fileType = 'text/x-pug', fileOptions, pugOptions, ...rest} = options;
+    const {
+        test = /\.(pug|jade)$/, fileType = 'text/x-pug', fileOptions, pugOptions, ...rest
+    } = options;
 
     const pugLoader = context => ({
         module: {
