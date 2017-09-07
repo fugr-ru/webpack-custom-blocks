@@ -1,6 +1,6 @@
 {
   "name": "@futuregroup/webpack-custom-blocks",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "A set of well-thought 📦webpack-blocks for real-world projects",
   "author": "Vlad Zhukov (http://github.com/Vlad-Zhukov)",
   "license": "MIT",
